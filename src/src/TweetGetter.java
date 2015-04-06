@@ -27,6 +27,7 @@ public class TweetGetter {
 	String params = "";
 	int num = 100;
 	String since ="2013-12-01";
+	
 	public List<Status> getTweets(){
 		List<Status> tweets = null;
 		try{

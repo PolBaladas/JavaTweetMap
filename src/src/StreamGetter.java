@@ -18,7 +18,7 @@ import twitter4j.TwitterStreamFactory;
 
 public class StreamGetter{
 	
-	public StreamGetter(JMapViewer param_map, JTextPane param_panel)  throws Exception{
+	public StreamGetter(JMapViewer param_map, JTextPane param_panel, String param)  throws Exception{
 		
 		final JMapViewer map = param_map;
 		final JTextPane panel = param_panel;
@@ -54,7 +54,7 @@ public class StreamGetter{
 		};
 		
 		FilterQuery query = new FilterQuery();
-		String[] keys = {"google code in"};
+		String[] keys = {param};
 		query.track(keys);
 		
 		twitterStream.addListener(listener);

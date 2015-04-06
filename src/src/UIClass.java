@@ -29,17 +29,17 @@ public class UIClass extends JFrame{
 	JScrollPane streamContainer = new JScrollPane(twitterStream);
 	
 	
-	public UIClass(TweetGetter params){
+	public UIClass(TweetGetter getter){
 		super("TweetMap");
 		setSize(1800,900);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		tweetGetter = params;
+		tweetGetter = getter;
 		setMap();
 		setStream();
 		
 		try {
-			StreamGetter stream = new StreamGetter(map, twitterStream);
+			StreamGetter stream = new StreamGetter(map, twitterStream, tweetGetter.params);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
